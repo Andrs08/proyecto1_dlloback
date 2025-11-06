@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express"
 
 import taller1Routes from "./taller1/taller1.routes"
+import taller2Routes from "./taller2/taller2.routes"
 
 const app = express();
 app.use(cors());
@@ -12,6 +13,8 @@ const pref = "/api/proyecto1/";
 
 app.use(pref + "taller1", taller1Routes);
 console.log("Ruta cargada:", pref + "taller1");
+
+app.use(pref + "taller2", taller2Routes);
 
 function routeNotFound(request: Request, response: Response) {
   response.status(404).json({
